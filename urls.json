@@ -1,0 +1,20 @@
+[
+    {
+        "main": "https://steamcommunity.com/market/search?category_730_ItemSet%5B%5D=any&category_730_ProPlayer%5B%5D=any&category_730_StickerCapsule%5B%5D=any&category_730_TournamentTeam%5B%5D=any&category_730_Weapon%5B%5D=any&category_730_Type%5B%5D=tag_CSGO_Type_WeaponCase&appid=730&q=Waffenkiste#p1_name_desc"
+    },
+    {
+        "steam_breakout": "https://steamcommunity.com/market/listings/730/Operation%20Breakout%20Weapon%20Case"
+    },
+    {
+        "steam_dz": "https://steamcommunity.com/market/listings/730/Danger%20Zone%20Case"
+    },
+    {
+        "steam_glove": "https://steamcommunity.com/market/listings/730/Glove%20Case"
+    },
+    {
+        "steam_clutch": "https://steamcommunity.com/market/listings/730/Clutch%20Case"
+    },
+    {
+        "steam_spec": "https://steamcommunity.com/market/listings/730/Spectrum%20Case"
+    }
+]

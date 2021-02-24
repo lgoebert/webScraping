@@ -1,23 +1,42 @@
 var urls = require("./urls.json");
-var urls = require("./urls.json");
-console.log(Object.values(urls[0]));
+var xpaths = require("./xpaths.json");
 
+const buy_price = xpaths.buy_price;
+const buy_reqnum = xpaths.buy_reqnum;
+const itemName = xpaths.name;
+
+console.log(itemName);
+console.log(buy_reqnum);
+console.log(buy_price);
+
+const preparePageForTests = async (page) => {
+  console.log("setting up for userAgent Test...");
+  let userAgent =
+    "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:85.0) Gecko/20100101 Firefox/85.0";
+  await page.setUserAgent(userAgent);
+};
 //for (let i = 0; i < urls.length; i++) {
+
 let scraperObject = {
-  url:
-    "https://steamcommunity.com/market/search?category_730_ItemSet%5B%5D=any&category_730_ProPlayer%5B%5D=any&category_730_StickerCapsule%5B%5D=any&category_730_TournamentTeam%5B%5D=any&category_730_Weapon%5B%5D=any&category_730_Type%5B%5D=tag_CSGO_Type_WeaponCase&appid=730&q=Waffenkiste#p1_name_desc",
+  url: "https://steamcommunity.com/market/listings/730/Fracture%20Case",
   async scraper(browser) {
-    let page = await browser.newPage();
+    //try {
+
+    const page = await browser.newPage();
+    await preparePageForTests(page);
+
     console.log(`Navigating to ${this.url}...`);
     await page.goto(this.url);
     //price
-    const [el] = await page.$x(
-      "/html/body/div[1]/div[7]/div[2]/div[1]/div[4]/div[2]/div[2]/div/div[1]/a[1]/div/div[1]/div[2]/span[1]/span[1]"
-    );
+    await page.waitForXPath(buy_price);
+    const [el] = await page.$x(buy_price);
     const text = await el.getProperty("textContent");
-    const raw = text.jsonValue();
+    const raw = await text.jsonValue();
     console.log(raw);
     browser.close();
+    //} catch (error) {
+    console.error("ohman" + error.message);
+    // }
   },
 };
 

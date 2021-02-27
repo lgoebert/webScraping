@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/lgoebert/webScraping#readme",
   "dependencies": {
-    "puppeteer": "^7.1.0",
+    "csvtojson": "^2.0.10",
+    "exceljs": "^4.2.0",
+    "json2csv": "^5.0.6",
+    "puppeteer": "^8.0.0",
     "puppeteer-extra": "^3.1.17",
     "puppeteer-extra-plugin-stealth": "^2.7.5"
   }

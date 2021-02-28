@@ -20,14 +20,11 @@ const passUserAgentTest = async (page) => {
 async function scrapeSite(url, page, browser) {
   try {
     await passUserAgentTest(page);
-    console.log("-----");
 
     console.log(typeof url);
     console.log(url);
 
     await page.goto(url);
-
-    console.log("-----");
   } catch (error) {
     console.log("Error: " + error.message);
   }
@@ -90,6 +87,7 @@ async function start() {
   for (var key of Object.keys(urls)) {
     var myurl = urls[key];
   }
+  console.log("here: " + myurl);
   scrapeSite(myurl, page, browser);
 }
 start();

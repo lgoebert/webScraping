@@ -1,23 +1,8 @@
-[
-    {
-        "google": "https://www.google.com/"
-    },
-    {
-        "steam_breakout": "https://steamcommunity.com/market/listings/730/Operation%20Breakout%20Weapon%20Case"
-    },
-    {
-        "steam_dz": "https://steamcommunity.com/market/listings/730/Danger%20Zone%20Case"
-    },
-    {
-        "steam_glove": "https://steamcommunity.com/market/listings/730/Glove%20Case"
-    },
-    {
-        "steam_clutch": "https://steamcommunity.com/market/listings/730/Clutch%20Case"
-    },
-    {
-        "steam_spec": "https://steamcommunity.com/market/listings/730/Spectrum%20Case"
-    },
-    {
-        "steam_brokenfang": "https://steamcommunity.com/market/listings/730/Operation%20Broken%20Fang%20Case"
-    }
-]
+{
+    "steam_breakout": "https://steamcommunity.com/market/listings/730/Operation%20Breakout%20Weapon%20Case",
+    "steam_dz": "https://steamcommunity.com/market/listings/730/Danger%20Zone%20Case",
+    "steam_glove": "https://steamcommunity.com/market/listings/730/Glove%20Case",
+    "steam_clutch": "https://steamcommunity.com/market/listings/730/Clutch%20Case",
+    "steam_spec": "https://steamcommunity.com/market/listings/730/Spectrum%20Case",
+    "steam_brokenfang": "https://steamcommunity.com/market/listings/730/Operation%20Broken%20Fang%20Case"
+}

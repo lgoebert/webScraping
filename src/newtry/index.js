@@ -1,4 +1,4 @@
-const steam_urls = require("../../config/steam_urls.json");
+const steam_cases = require("../../config/steam/steam_cases.json");
 const scrape = require("./pageScraper");
 
-scrape(steam_urls);
+scrape(steam_cases);

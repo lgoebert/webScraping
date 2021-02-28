@@ -2,8 +2,8 @@
 /* local files needed */
 const startBrowser = require("./browser");
 const handlePage = require("./pageController");
-const steam_urls = require("../../config/steam_urls.json");
-const xpaths = require("../../config/xpaths.json");
+const steam_urls = require("../../config/steam/steam_cases.json");
+const xpaths = require("../../config/steam/steam_xpaths.json");
 const itemToFile = require("./itemToFile");
 /* ------------------ */
 

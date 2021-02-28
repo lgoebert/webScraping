@@ -22,8 +22,8 @@ async function scrapeSite(page) {
   try {
     for (let i = 0; i < xpaths.length; i++) {
       let currxPath = Object.values(xpaths[i]);
-      //let currKey = Object.keys(xpaths[i]);
-
+      let currKey = Object.keys(xpaths[i]);
+      console.log(`current xpath for: ${currKey}`);
       await page.waitForXPath(currxPath);
       const [el] = await page.$x(currxPath);
       const obj = await el.getProperty("textContent");
@@ -31,7 +31,6 @@ async function scrapeSite(page) {
 
       myObj[Object.keys(myObj)[i]] = raw;
     }
-    console.log(myObj);
   } catch (error) {
     console.error(error.message);
   }
@@ -65,25 +64,34 @@ async function init() {
  * into items.json
  * @param {*} urls contains json array of all urls wished to be scraped
  */
-async function scrape(urls) {
-  const instances = await init();
-  const browser = instances.ibrowser;
-  const page = instances.ipage;
-  let allObjs = []; // contains all items(with it's info's, for all urls)
+async function startScrape(urls) {
+  try {
+    const instances = await init();
+    const browser = instances.ibrowser;
+    const page = instances.ipage;
+    let allObjs = []; // contains all items(with it's info's, for all urls)
 
-  // iterating through all urls(e.g. for each case)
-  for (var key of Object.keys(urls)) {
-    let myurl = urls[key];
-    await page.goto(myurl);
-    let currObj = await scrapeSite(page);
-    allObjs.push(currObj);
+    // iterating through all urls(e.g. for each case)
+    for (var key of Object.keys(urls)) {
+      let currUrl = urls[key];
+      console.log(`collecting data from: ${currUrl}`);
+
+      await page.goto(currUrl);
+      let currObj = await scrapeSite(page);
+      allObjs.push(currObj); // adds all Items which are being scraped into one big array of objs
+    }
+
+    // await itemToFile(allObjs); currently not used
+
+    console.log("done. closing browser now");
+    browser.close();
+
+    return allObjs;
+    //      await browser.close();
+  } catch (error) {
+    console.log("Error in pageScraper.js: " + error.message);
+    return null;
   }
-
-  // write all objects, which were collected together in
-  await itemToFile(allObjs);
-  console.log("done. closing browser now");
-  await browser.close();
 }
 
-module.exports = scrape;
-//scrape(steam_urls);
+module.exports = startScrape;

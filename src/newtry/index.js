@@ -3,19 +3,16 @@
 const startBrowser = require("./browser");
 const handlePage = require("./pageController");
 const steam_urls = require("../../config/steam_urls.json");
-const items = require("../../config/item.json");
 const xpaths = require("../../config/xpaths.json");
 const itemToFile = require("./itemToFile");
 /* ------------------ */
 
-/* vars */
-var browser = null;
-var page = null;
-var itemArr = [];
-/* ---- */
-
-async function scrapeSite(page, browser) {
-  let temp = {
+/**
+ * scrapes the given site for all xpaths
+ * @param {*} page instance of a puppeteer page
+ */
+async function scrapeSite(page) {
+  var myObj = {
     name: "",
     buy_price: "",
     buy_reqnum: "",
@@ -25,36 +22,33 @@ async function scrapeSite(page, browser) {
   try {
     for (let i = 0; i < xpaths.length; i++) {
       let currxPath = Object.values(xpaths[i]);
-      let currKey = Object.keys(xpaths[i]);
+      //let currKey = Object.keys(xpaths[i]);
 
       await page.waitForXPath(currxPath);
       const [el] = await page.$x(currxPath);
       const obj = await el.getProperty("textContent");
-
       const raw = await obj.jsonValue();
 
-      console.log(typeof raw);
-      console.log(raw);
-      await itemToFile(raw);
-      // key von path holen, dann in item.json mit selbem namen schreiben
-      await itemArr.push(raw);
+      myObj[Object.keys(myObj)[i]] = raw;
     }
-    console.log(itemArr);
+    console.log(myObj);
   } catch (error) {
     console.error(error.message);
   }
+  return myObj;
 }
+/**
+ *  init browser and page
+ */
 async function init() {
-  /* init browser and page */
-
-  browser = await startBrowser();
+  let browser = await startBrowser();
   if (browser != undefined) {
     console.log("Browser returned successfully");
   } else {
     console.log("Browser undefined. Exiting");
     return;
   }
-  page = await handlePage(browser);
+  let page = await handlePage(browser);
   if (page != undefined) {
     console.log("Page returned successfully");
   } else {
@@ -66,16 +60,29 @@ async function init() {
     ipage: page,
   };
 }
+/**
+ * Starts the scraping process. After returning from scrapeSite(), it writes the Objects
+ * into items.json
+ * @param {*} urls contains json array of all urls wished to be scraped
+ */
 async function scrape(urls) {
   const instances = await init();
-  browser = instances.ibrowser;
-  page = instances.ipage;
+  const browser = instances.ibrowser;
+  const page = instances.ipage;
+  let allObjs = []; // contains all items(with it's info's, for all urls)
 
+  // iterating through all urls(e.g. for each case)
   for (var key of Object.keys(urls)) {
-    var myurl = urls[key];
+    let myurl = urls[key];
     await page.goto(myurl);
-    await scrapeSite(page, browser);
+    let currObj = await scrapeSite(page);
+    allObjs.push(currObj);
   }
-}
 
+  // write all objects, which were collected together in
+  await itemToFile(allObjs);
+  console.log("done. closing browser now");
+  await browser.close();
+}
 scrape(steam_urls);
+module.exports = scrape;

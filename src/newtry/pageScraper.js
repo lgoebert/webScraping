@@ -1,41 +1,89 @@
-var urls = require("./urls.json");
-var xpaths = require("./xpaths.json");
+"use strict";
+/* local files needed */
+const startBrowser = require("./browser");
+const handlePage = require("./pageController");
+const steam_urls = require("../../config/steam_urls.json");
+const xpaths = require("../../config/xpaths.json");
+const itemToFile = require("./itemToFile");
+/* ------------------ */
 
-const buy_price = xpaths.buy_price;
-const buy_reqnum = xpaths.buy_reqnum;
-const itemName = xpaths.name;
+/**
+ * scrapes the given site for all xpaths
+ * @param {*} page instance of a puppeteer page
+ */
+async function scrapeSite(page) {
+  var myObj = {
+    name: "",
+    buy_price: "",
+    buy_reqnum: "",
+    sell_price: "",
+    sell_num: "",
+  };
+  try {
+    for (let i = 0; i < xpaths.length; i++) {
+      let currxPath = Object.values(xpaths[i]);
+      //let currKey = Object.keys(xpaths[i]);
 
-console.log(itemName);
-console.log(buy_reqnum);
-console.log(buy_price);
+      await page.waitForXPath(currxPath);
+      const [el] = await page.$x(currxPath);
+      const obj = await el.getProperty("textContent");
+      const raw = await obj.jsonValue();
 
-const preparePageForTests = async (page) => {
-  console.log("setting up for userAgent Test...");
-  let userAgent =
-    "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:85.0) Gecko/20100101 Firefox/85.0";
-  await page.setUserAgent(userAgent);
-};
-//for (let i = 0; i < urls.length; i++) {
+      myObj[Object.keys(myObj)[i]] = raw;
+    }
+    console.log(myObj);
+  } catch (error) {
+    console.error(error.message);
+  }
+  return myObj;
+}
+/**
+ *  init browser and page
+ */
+async function init() {
+  let browser = await startBrowser();
+  if (browser != undefined) {
+    console.log("Browser returned successfully");
+  } else {
+    console.log("Browser undefined. Exiting");
+    return;
+  }
+  let page = await handlePage(browser);
+  if (page != undefined) {
+    console.log("Page returned successfully");
+  } else {
+    console.log("Page undefined. Exiting");
+    return;
+  }
+  return {
+    ibrowser: browser,
+    ipage: page,
+  };
+}
+/**
+ * Starts the scraping process. After returning from scrapeSite(), it writes the Objects
+ * into items.json
+ * @param {*} urls contains json array of all urls wished to be scraped
+ */
+async function scrape(urls) {
+  const instances = await init();
+  const browser = instances.ibrowser;
+  const page = instances.ipage;
+  let allObjs = []; // contains all items(with it's info's, for all urls)
 
-let scraperObject = {
-  url: "https://steamcommunity.com/market/listings/730/Fracture%20Case",
-  async scraper(browser) {
-    //try {
+  // iterating through all urls(e.g. for each case)
+  for (var key of Object.keys(urls)) {
+    let myurl = urls[key];
+    await page.goto(myurl);
+    let currObj = await scrapeSite(page);
+    allObjs.push(currObj);
+  }
 
-    const page = await browser.newPage();
-    await preparePageForTests(page);
+  // write all objects, which were collected together in
+  await itemToFile(allObjs);
+  console.log("done. closing browser now");
+  await browser.close();
+}
 
-    console.log(`Navigating to ${this.url}...`);
-    await page.goto(this.url);
-    //price
-    await page.waitForXPath(buy_price);
-    const [el] = await page.$x(buy_price);
-    const text = await el.getProperty("textContent");
-    const raw = await text.jsonValuPro;
-    //} catch (error) {
-    console.error("ohman" + error.message);
-    // }
-  },
-};
-
-module.exports = scraperObject;
+module.exports = scrape;
+//scrape(steam_urls);

@@ -2,9 +2,9 @@
 /* local files needed */
 const startBrowser = require("./browser");
 const handlePage = require("./pageController");
-const steam_urls = require("../../config/steam/steam_cases.json");
+
 const xpaths = require("../../config/steam/steam_xpaths.json");
-const itemToFile = require("./itemToFile");
+//const itemToFile = require("./itemToFile");
 /* ------------------ */
 
 /**
@@ -73,6 +73,7 @@ async function startScrape(urls) {
 
     // iterating through all urls(e.g. for each case)
     for (var key of Object.keys(urls)) {
+      console.log(".....");
       let currUrl = urls[key];
       console.log(`collecting data from: ${currUrl}`);
 

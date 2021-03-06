@@ -3,7 +3,7 @@
 const startBrowser = require("./browser");
 const handlePage = require("./pageController");
 
-const xpaths = require("../../config/steam/steam_xpaths.json");
+//const xpaths = require("../../steam/weapons/xpaths.json");
 //const itemToFile = require("./itemToFile");
 /* ------------------ */
 
@@ -11,7 +11,8 @@ const xpaths = require("../../config/steam/steam_xpaths.json");
  * scrapes the given site for all xpaths
  * @param {*} page instance of a puppeteer page
  */
-async function scrapeSite(page) {
+async function scrapeSite(page, xPath) {
+  var xpaths = xPath;
   var myObj = {
     name: "",
     buy_price: "",
@@ -64,7 +65,7 @@ async function init() {
  * into items.json
  * @param {*} urls contains json array of all urls wished to be scraped
  */
-async function startScrape(urls) {
+async function startScrape(urls, xPath) {
   try {
     const instances = await init();
     const browser = instances.ibrowser;
@@ -78,7 +79,7 @@ async function startScrape(urls) {
       console.log(`collecting data from: ${currUrl}`);
 
       await page.goto(currUrl);
-      let currObj = await scrapeSite(page);
+      let currObj = await scrapeSite(page, xPath);
       allObjs.push(currObj); // adds all Items which are being scraped into one big array of objs
     }
 

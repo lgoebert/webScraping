@@ -1,8 +1,14 @@
 {
-    "Butterflymesser (★) | Einsatzgehärtet": "./all_items/butterflyCaseHardened.csv",
+    "Butterflymesser (★) | Einsatzgehärtet": "./all_items/butterflyCaseHardenedWW.csv",
     "StatTrak™ AK-47 | Vulcan (Minimal Wear)": "./all_items/akVulcanStMw.csv",
     "Waffenkiste „Operation Zerbrochener Reißzahn“": "./all_items/operationBrokenFang.csv",
     "Waffenkiste „Handschuhe“": "./all_items/gloveCase.csv",
     "AWP | Asiimov (Field-Tested)": "./all_items/awpAsiimovFT.csv",
-    "Waffenkiste „Operation Breakout“": "./all_items/operationBreakout.csv"
+    "Waffenkiste „Operation Breakout“": "./all_items/operationBreakout.csv",
+    "Waffenkiste „Durchbruch“": "./all_items/fractureCase.csv",
+    "Waffenkiste „Gamma 2“": "./all_items/gammaCase.csv",
+    "Waffenkiste „Spektrum 2“": "./all_items/spectrum2Case.csv",
+    "Waffenkiste „Gefahrenzone“": "./all_items/dangerzoneCase.csv",
+    "Waffenkiste „Spektrum“": "./all_items/spectrumCase.csv",
+    "Butterflymesser (★) | Metzelei (MW)": "./all_items/butterflySlaughterMW.csv"
 }

@@ -19,8 +19,12 @@ async function startReq(url, csvPath) {
       resp.on("end", () => {
         if (data != null || data != undefined || data == "") {
           console.log(data);
-          let itemObj = JSON.parse(data);
-          writeToCSV(itemObj, csvPath);
+          try {
+            let itemObj = JSON.parse(data);
+            writeToCSV(itemObj, csvPath);
+          } catch (error) {
+            console.error(error.message);
+          }
         } else {
           console.log(">>> data null or undefined");
           console.log(typeof data);

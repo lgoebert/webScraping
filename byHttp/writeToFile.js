@@ -17,13 +17,19 @@ async function writeToCSV(obj, csvPath) {
   let hours = date_ob.getHours();
   let minutes = date_ob.getMinutes();
   let timestamp = year + "-" + month + "-" + date + " " + hours + ":" + minutes;
-
+  timestamp = new Date(timestamp).getTime();
   console.log(timestamp);
+  try {
+    console.log(obj.lowest_price);
+    obj.lowest_price = obj.lowest_price.replace(/,/g, ".");
 
-  obj.lowest_price = obj.lowest_price.replace(/,/g, ".");
-  obj.median_price = obj.median_price.replace(/,/g, ".");
-  obj.volume = obj.volume.replace(/,/g, ".");
-
+    console.log(obj.median_price);
+    obj.median_price = obj.median_price.replace(/,/g, ".");
+    console.log(obj.volume);
+    obj.volume = obj.volume.replace(/,/g, ".");
+  } catch (error) {
+    console.error(error.message);
+  }
   CSVToJSON()
     .fromFile(csvPath)
     .then((source) => {
@@ -39,5 +45,7 @@ async function writeToCSV(obj, csvPath) {
       FileSystem.writeFileSync(csvPath, csv);
     });
 }
-
+async function dateToNum(dateStr) {
+  return value;
+}
 module.exports = writeToCSV;

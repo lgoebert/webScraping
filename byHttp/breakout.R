@@ -17,5 +17,14 @@ pp
 
 
 
+bb <- ggplot(breakout_case, aes(x=date, y=lowest_price)) +
+  geom_point()+
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Operation Breakout Case Price-chart",
+       x = "Date",
+       y = "Price"
+  )+
+  geom_smooth(method=lm) 
 
 
+bb

@@ -1,14 +1,14 @@
 {
-    "Butterflymesser (★) | Einsatzgehärtet": "./all_items/butterflyCaseHardenedWW.csv",
-    "StatTrak™ AK-47 | Vulcan (Minimal Wear)": "./all_items/akVulcanStMw.csv",
-    "Waffenkiste „Operation Zerbrochener Reißzahn“": "./all_items/operationBrokenFang.csv",
-    "Waffenkiste „Handschuhe“": "./all_items/gloveCase.csv",
-    "AWP | Asiimov (Field-Tested)": "./all_items/awpAsiimovFT.csv",
-    "Waffenkiste „Operation Breakout“": "./all_items/operationBreakout.csv",
-    "Waffenkiste „Durchbruch“": "./all_items/fractureCase.csv",
-    "Waffenkiste „Gamma 2“": "./all_items/gammaCase.csv",
-    "Waffenkiste „Spektrum 2“": "./all_items/spectrum2Case.csv",
-    "Waffenkiste „Gefahrenzone“": "./all_items/dangerzoneCase.csv",
-    "Waffenkiste „Spektrum“": "./all_items/spectrumCase.csv",
-    "Butterflymesser (★) | Metzelei (MW)": "./all_items/butterflySlaughterMW.csv"
+    "★ Butterfly Knife | Case Hardened": "./all_items/butterflyCaseHardenedWW.csv",
+    "StatTrak™ AK-47 | Vulcan MW": "./all_items/akVulcanStMw.csv",
+    "Operation Broken Fang Case": "./all_items/operationBrokenFang.csv",
+    "Glove Case": "./all_items/gloveCase.csv",
+    "AWP | Asiimov FT": "./all_items/awpAsiimovFT.csv",
+    "Operation Breakout Weapon Case": "./all_items/operationBreakout.csv",
+    "Fracture Case": "./all_items/fractureCase.csv",
+    "Gamma 2 Case": "./all_items/gammaCase.csv",
+    "Spectrum 2 Case": "./all_items/spectrum2Case.csv",
+    "Danger Zone Case": "./all_items/dangerzoneCase.csv",
+    "Spectrum Case": "./all_items/spectrumCase.csv",
+    "★ Butterfly Knife | Slaughter MW": "./all_items/butterflySlaughterMW.csv"
 }

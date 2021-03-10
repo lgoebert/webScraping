@@ -27,6 +27,7 @@ Currently working on HTTP-Version
   4. Automatically switch VPN / IP when too many requests
 
   - check response header for such message
+  - Write bash script to automatically fill username / password promt in terminal
 
 - Website
   1. Handle user-inputs

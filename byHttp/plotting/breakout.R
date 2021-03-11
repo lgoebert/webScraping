@@ -15,7 +15,8 @@ pp <- ggplot(data=breakout_case, aes(x = date, y = lowest_price, group = 1)) +
        )
 pp
 
-
+tester <- ggplot(data = breakout_case,aes(x=date,y=lowest_price))+geom_bar(stat = "identity")
+tester
 
 bb <- ggplot(breakout_case, aes(x=date, y=lowest_price)) +
   geom_point()+
@@ -26,5 +27,3 @@ bb <- ggplot(breakout_case, aes(x=date, y=lowest_price)) +
   )+
   geom_smooth(method=lm) 
 
-
-bb

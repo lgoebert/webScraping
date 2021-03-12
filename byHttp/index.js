@@ -3,8 +3,8 @@ const getFile = require("./filesHandler");
 //const cutName = require("./filesHandler");
 
 // vorraussetzung: Reihenfolge der items in itemsCSV.json muss gleich derer in items.json sein.
-var urls = require("./json/items.json");
-var csvs = require("./json/itemsCSV.json");
+var myurls = require("./json/items.json");
+var mycsvs = require("./json/itemsCSV.json");
 
 async function iterateItems(urls, csvs) {
   var len = Object.keys(urls).length;
@@ -20,10 +20,7 @@ async function iterateItems(urls, csvs) {
   }
 }
 
-(function () {
-  iterateItems(urls, csvs);
-  setTimeout(arguments.callee, 10000);
-})();
+setInterval(iterateItems,2000000,myurls,mycsvs);
 
 /*
     "Talon-Messer (★) | Damaszener Stahl MW": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Talon%20Knife%20|%20Damascus%20Steel%20(Minimal%20Wear)",

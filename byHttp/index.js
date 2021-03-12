@@ -3,8 +3,8 @@ const getFile = require("./filesHandler");
 //const cutName = require("./filesHandler");
 
 // vorraussetzung: Reihenfolge der items in itemsCSV.json muss gleich derer in items.json sein.
-var urls = require("./json/items.json");
-var csvs = require("./json/itemsCSV.json");
+var myurls = require("./json/items.json");
+var mycsvs = require("./json/itemsCSV.json");
 
 async function iterateItems(urls, csvs) {
     var len = Object.keys(urls).length;
@@ -20,7 +20,12 @@ async function iterateItems(urls, csvs) {
     }
 }
 
+<<<<<<< HEAD
 setInterval(iterateItems, 10000, urls, csvs);
+=======
+setInterval(iterateItems,2000000,myurls,mycsvs);
+
+>>>>>>> 631ad334c5ba837d4ba31b042eae577ddebb1642
 /*
     "Talon-Messer (★) | Damaszener Stahl MW": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Talon%20Knife%20|%20Damascus%20Steel%20(Minimal%20Wear)",
         "FAMAS | Gedenkenfeier FT ": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=FAMAS%20|%20Commemoration%20(Field-Tested)",

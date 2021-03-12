@@ -28,7 +28,7 @@ async function writeToCSV(obj, csvPath) {
         console.log(obj.volume);
         obj.volume = obj.volume.replace(/,/g, ".");
     } catch (error) {
-        console.error(error.message);
+        console.error("Some data undefined:  " + error.message);
     }
 
     CSVToJSON()
@@ -46,7 +46,5 @@ async function writeToCSV(obj, csvPath) {
             FileSystem.writeFileSync(csvPath, csv);
         });
 }
-async function dateToNum(dateStr) {
-    return value;
-}
+
 module.exports = writeToCSV;

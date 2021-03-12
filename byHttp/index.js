@@ -7,24 +7,20 @@ var urls = require("./json/items.json");
 var csvs = require("./json/itemsCSV.json");
 
 async function iterateItems(urls, csvs) {
-  var len = Object.keys(urls).length;
-  for (var i = 0; i < len; i++) {
-    console.log("-------------");
-    let itemname = await Object.keys(urls)[i];
-    itemname = await getFile(itemname);
-    console.log("name: " + itemname);
-    url = await Object.values(urls)[i];
-    // csvPath = await Object.values(csvs)[i];
-    console.log("###################" + itemname);
-    await startReq(url, itemname);
-  }
+    var len = Object.keys(urls).length;
+    for (var i = 0; i < len; i++) {
+        console.log("-------------");
+        let itemname = await Object.keys(urls)[i];
+        itemname = await getFile(itemname);
+        console.log("name: " + itemname);
+        url = await Object.values(urls)[i];
+        // csvPath = await Object.values(csvs)[i];
+        console.log("###################" + itemname);
+        await startReq(url, itemname);
+    }
 }
 
-(function () {
-  iterateItems(urls, csvs);
-  setTimeout(arguments.callee, 10000);
-})();
-
+setInterval(iterateItems, 10000, urls, csvs);
 /*
     "Talon-Messer (★) | Damaszener Stahl MW": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Talon%20Knife%20|%20Damascus%20Steel%20(Minimal%20Wear)",
         "FAMAS | Gedenkenfeier FT ": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=FAMAS%20|%20Commemoration%20(Field-Tested)",

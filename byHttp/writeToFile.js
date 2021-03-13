@@ -17,8 +17,9 @@ async function writeToCSV(obj, csvPath) {
     let hours = date_ob.getHours();
     let minutes = date_ob.getMinutes();
     let timestamp = year + "-" + month + "-" + date + " " + hours + ":" + minutes;
+console.log(timestamp);
     timestamp = new Date(timestamp).getTime();
-    console.log(timestamp);
+  console.log(timestamp);
     try {
         console.log(obj.lowest_price);
         obj.lowest_price = obj.lowest_price.replace(/,/g, ".");

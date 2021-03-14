@@ -18,9 +18,11 @@ async function iterateItems(urls) {
         await startReq(url, itemname);
     }
 }
-
-setInterval(iterateItems,(1000*60*11),myurls);
-
+console.log("Starting now");
+var now = new Date();
+// convert date to a string in UTC timezone format:
+console.log(now.toUTCString());
+setInterval(iterateItems,(1000*60*5),myurls);
 /*
     "Talon-Messer (★) | Damaszener Stahl MW": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Talon%20Knife%20|%20Damascus%20Steel%20(Minimal%20Wear)",
         "FAMAS | Gedenkenfeier FT ": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=FAMAS%20|%20Commemoration%20(Field-Tested)",

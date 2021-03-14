@@ -1,0 +1,13 @@
+Starting now
+/home/pi/dev/webScraping/byHttp/index.js:23
+console.log(error.message)
+            ^
+
+ReferenceError: error is not defined
+    at Object.<anonymous> (/home/pi/dev/webScraping/byHttp/index.js:23:13)
+    at Module._compile (node:internal/modules/cjs/loader:1092:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1121:10)
+    at Module.load (node:internal/modules/cjs/loader:972:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:813:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)
+    at node:internal/main/run_main_module:17:47

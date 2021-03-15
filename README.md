@@ -1,6 +1,13 @@
-# webScraping
+# Scraper for prices on: Steam-market / skinport.com / skinbaron.com
 
-Currently working on HTTP-Version
+Currently working on HTTP-Version, only Steam-market data available
+
+[Current data sets can be found here](https://github.com/lgoebert/webScraping/tree/main/byHttp/plotting/files)
+Currently, there are four columns:
+
+```csv
+"date","lowest_price","median_price","volume"
+```
 
 ### byHttp TODO:
 
@@ -15,14 +22,6 @@ Currently working on HTTP-Version
     - Delay between posts and price changes
 
   - Get Update size (e.g. from csgodatabase)
-
-  2. Reorder Filesystem
-
-  - JS Objects instead of JSON key-value
-
-    - {Name,URL,csvFilePath}
-
-  3. function to change all current timestamps in all csv's to numeric values
 
   4. Automatically switch VPN / IP when too many requests
 

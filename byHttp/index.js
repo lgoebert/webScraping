@@ -23,7 +23,7 @@ setInterval(
             await startReq(url, itemname);
         }
     },
-    10 * 60 * 1000,
+    1 * 1 * 1000,
     myurls
 );
 

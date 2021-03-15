@@ -1,14 +1,31 @@
 library(ggplot2)
 
-breakout_case <- read.csv("./all_items/operationBreakout.csv")
+breakout_case <- read.csv("./files/OperationBreakoutWeaponCase.csv")
+breakout_case$lowest_price
+breakout_case$date <- as.POSIXct(as.numeric(breakout_case$date / 1000), origin="1970-01-01", tz="CET")
 
-p <- ggplot(data=breakout_case, aes(x = date,y = lowest_price))+
-  geom_line(stat="identity")
+
+breakout_case$lowest_price <-gsub('[€]', '', breakout_case$lowest_price)
+
+breakout_case$lowest_price <- as.numeric(breakout_case$lowest_price)
+breakout_case$lowest_price
+as.POSIXct(breakout_case$date, origin="1970-01-01")
+#p <- ggplot(data=breakout_case, aes(x = date,y = lowest_price))+
+ # geom_line(stat="identity")
+
+#p
+
+
+print(breakout_case$date)
+beginn <- as.numeric(as.POSIXct("2021-03-08 17:09:00"))
+ende <- as.numeric(as.POSIXct("2021-03-14 19:14:00"))
 
 
 pp <- ggplot(data=breakout_case, aes(x = date, y = lowest_price, group = 1)) +
   geom_line() + 
   theme(axis.text.x = element_text(angle = 90)) +
+  scale_y_continuous(breaks = seq(from = 1, to = 3, by = 0.02)) +
+  scale_x_continuous(breaks = seq(from = as.POSIXct(beginn, origin="1970-01-01") , to = as.POSIXct(ende, origin="1970-01-01"), by = 50000)) +
   labs(title = "Operation Breakout Case Price-chart",
         x = "Date",
        y = "Price"
@@ -24,6 +41,7 @@ bb <- ggplot(breakout_case, aes(x=date, y=lowest_price)) +
   labs(title = "Operation Breakout Case Price-chart",
        x = "Date",
        y = "Price"
-  )+
+  ) +
   geom_smooth(method=lm) 
 
+bb

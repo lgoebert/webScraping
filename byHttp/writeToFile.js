@@ -12,14 +12,18 @@ async function writeToCSV(obj, csvPath) {
 
     // current date
     let date = ("0" + date_ob.getDate()).slice(-2);
+    console.log(date_ob.getDate);
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+    console.log(date_ob.getMonth());
     let year = date_ob.getFullYear();
     let hours = date_ob.getHours();
     let minutes = date_ob.getMinutes();
     let timestamp = year + "-" + month + "-" + date + " " + hours + ":" + minutes;
-console.log(timestamp);
+    console.log("----------->>>>>>>>>>>>>>>");
+    console.log(Date.now);
     timestamp = new Date(timestamp).getTime();
-  console.log(timestamp);
+    console.log(timestamp);
+    return;
     try {
         console.log("lowest: " + obj.lowest_price);
         obj.lowest_price = obj.lowest_price.replace(/,/g, ".");

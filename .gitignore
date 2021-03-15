@@ -27,4 +27,9 @@ node_modules/*
 
 # Datasets
 *.csv
+<<<<<<< HEAD
+
+# Credentials
+creds/*
 all_items/*
+

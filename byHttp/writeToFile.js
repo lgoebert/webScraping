@@ -20,17 +20,15 @@ async function writeToCSV(obj, csvPath) {
     timestamp = new Date(timestamp).getTime();
     console.log(timestamp);
     try {
-        console.log(obj.lowest_price);
+        console.log("lowest: " + obj.lowest_price);
         obj.lowest_price = obj.lowest_price.replace(/,/g, ".");
-
-        console.log(obj.median_price);
+        console.log("median: " + obj.median_price);
         obj.median_price = obj.median_price.replace(/,/g, ".");
-        console.log(obj.volume);
+        console.log("volume: " + obj.volume);
         obj.volume = obj.volume.replace(/,/g, ".");
     } catch (error) {
         console.error("Some data undefined:  " + error.message);
     }
-
     CSVToJSON()
         .fromFile(csvPath)
         .then((source) => {

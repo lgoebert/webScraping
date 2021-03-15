@@ -21,11 +21,11 @@ async function startReq(url, csvPath) {
             // The whole response has been received. Print out the result.
             resp.on("end", () => {
                 if (resp.statusCode == TOOMANYREQ) {
-                    console.log("[TIMEOUT] starting timeout");
+                    console.log("[TIMEOUT] starting 4min timeout");
                     setTimeout(() => {
-                        console.log("[TIMEOUT] inside timeout");
-                    }, 10000);
-                    console.log("[TIMEOUT] finished timeout");
+                        console.log("[TIMEOUT] timeout running");
+                    }, 1000 * 60 * 4);
+                    console.log("[TIMEOUT] finished 4min timeout");
                 }
                 if (data != null || data != undefined || data == "") {
                     try {

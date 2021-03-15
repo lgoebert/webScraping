@@ -25,11 +25,7 @@ hs_err_pid*
 # npm folders
 node_modules/*
 
-# Datasets
-*.csv
-<<<<<<< HEAD
-
-# Credentials
+# Credentials + Datasets
 creds/*
-all_items/*
+/all_items/*
 

@@ -30,5 +30,5 @@ node_modules/*
 
 # Credentials + Datasets
 creds/*
-/all_items/*
+byHttp/all_items/*
 

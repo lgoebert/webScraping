@@ -3,25 +3,30 @@ const getFile = require("./filesHandler");
 
 var myurls = require("./json/items.json");
 
-async function iterateItems(urls) {
-    var len = Object.keys(urls).length;
-    for (var i = 0; i < len; i++) {
-        console.log("-------------");
-
-        let itemname = await Object.keys(urls)[i];
-        itemname = await getFile(itemname);
-        url = await Object.values(urls)[i];
-
-        console.log("name: " + itemname);
-
-        await startReq(url, itemname);
-    }
-}
 console.log("Starting now");
 var now = new Date();
 // convert date to a string in UTC timezone format:
-console.log(now.toUTCString());
-setInterval(iterateItems, 1000 * 60 * 5, myurls);
+console.log("one hour back" + now.toUTCString());
+
+setInterval(
+    async function(urls) {
+        var len = Object.keys(urls).length;
+        for (var i = 0; i < len; i++) {
+            console.log("-------------");
+
+            let itemname = await Object.keys(urls)[i];
+            itemname = await getFile(itemname);
+            url = await Object.values(urls)[i];
+
+            console.log("name: " + itemname);
+
+            await startReq(url, itemname);
+        }
+    },
+    10 * 60 * 1000,
+    myurls
+);
+
 /*
     "Talon-Messer (★) | Damaszener Stahl MW": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Talon%20Knife%20|%20Damascus%20Steel%20(Minimal%20Wear)",
         "FAMAS | Gedenkenfeier FT ": "https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=FAMAS%20|%20Commemoration%20(Field-Tested)",

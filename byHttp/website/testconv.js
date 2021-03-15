@@ -1,4 +1,4 @@
-var date = new Date(1615810226273); // create Date object
+var date = new Date(1615820160000); // create Date object
 
 console.log(date.toString());
 

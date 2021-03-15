@@ -17,7 +17,7 @@ function cutName(itemName) {
 function createFile(itemName) {
     let columns = '"date","lowest_price","median_price","volume"';
 
-    let path = "./all_items/" + cutName(itemName) + ".csv";
+    let path = "./plotting/files/" + cutName(itemName) + ".csv";
     console.log(path);
 
     if (fs.existsSync(path)) {

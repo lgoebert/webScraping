@@ -9,8 +9,8 @@ async function writeToCSV(obj, csvPath) {
     console.log("saved at: " + cutPath[1] + "/" + cutPath[2] + "/");
 
     // current timestamp in milliseconds
-    let timestamp = utils.currentDateTime();
-
+    let timestamp = await utils.currentDateTime();
+    console.log("time: " + timestamp);
     try {
         console.log("lowest: " + obj.lowest_price);
         obj.lowest_price = obj.lowest_price.replace(/,/g, ".");

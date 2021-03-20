@@ -1,6 +1,6 @@
 library(ggplot2)
 
-breakout_case <- read.csv("./ButterflyKnifeCaseHardenedWW.csv")
+breakout_case <- read.csv("./SpectrumCase.csv")
 breakout_case$lowest_price
 breakout_case$date <- as.POSIXct(as.numeric(breakout_case$date / 1000), origin="1970-01-01", tz="CET")
 library(zoo)

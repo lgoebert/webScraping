@@ -6,12 +6,7 @@ async function startReq(url, csvPath) {
 
     https
         .get(url, (resp) => {
-            console.log("-----------");
-            console.log(resp.statusCode);
-            //console.log(resp.headers);
-            console.log(url);
-            console.log("-----------");
-
+            console.log("status code: " + resp.statusCode);
             let data = "";
 
             // A chunk of data has been received.
@@ -22,9 +17,9 @@ async function startReq(url, csvPath) {
             resp.on("end", () => {
                 if (resp.statusCode == TOOMANYREQ) {
                     console.log("[TIMEOUT] starting 4min timeout");
-                    setTimeout(() => {
-                        console.log("[TIMEOUT] timeout running");
-                    }, 1000 * 60 * 4);
+                    /*setTimeout(() => {
+                                  console.log("[TIMEOUT] timeout running");
+                              }, 1000 * 60 * 4);*/
                     console.log("[TIMEOUT] finished 4min timeout");
                 }
                 if (data != null || data != undefined || data == "") {

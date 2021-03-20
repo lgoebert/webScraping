@@ -5,8 +5,8 @@ const utils = require("./utils");
 const FileSystem = require("fs");
 
 async function writeToCSV(obj, csvPath) {
-    console.log(">>>>>>");
-    console.log(csvPath);
+    let cutPath = csvPath.split("/");
+    console.log("saved at: " + cutPath[1] + "/" + cutPath[2] + "/");
 
     // current timestamp in milliseconds
     let timestamp = utils.currentDateTime();

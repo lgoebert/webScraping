@@ -22,6 +22,6 @@ setInterval(
             await startReq(url, item_name);
         }
     },
-    1 * 5 * 1000,
+    30 * 60 * 1000,
     urls_list
 );

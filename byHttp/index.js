@@ -9,8 +9,6 @@ console.log("Starting now");
 utils.currentDateTime();
 setInterval(
     async function(urls) {
-        // using tor proxy to spoof ip
-        
         var len = Object.keys(urls).length;
         for (var i = 0; i < len; i++) {
             console.log("-------------");

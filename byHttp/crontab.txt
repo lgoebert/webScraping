@@ -1,0 +1,1 @@
+*/45 * * * * /home/pi/dev/webScraping/byHttp/scrape.sh

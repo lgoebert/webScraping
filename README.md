@@ -10,7 +10,10 @@ Currently, there are four columns:
 ```csv
 "date","lowest_price","median_price","volume"
 ```
-
+Start using:
+```
+nohup node index.js > ~/logs/scraper.txt &
+```
 ### byHttp TODO:
 
 - Application

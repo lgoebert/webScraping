@@ -1,0 +1,210 @@
+Starting now
+2021-03-23 14:58
+-------------
+./plotting/files/ButterflyKnifeCaseHardenedWW.csv
+exists
+####./plotting/files/ButterflyKnifeCaseHardenedWW.csv
+host: steamcommunity.com
+name: ./plotting/files/ButterflyKnifeCaseHardenedWW.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Butterfly%20Knife%20|%20Case%20Hardened%20(Well-Worn)
+-------------
+./plotting/files/StatTrakAK47VulcanMW.csv
+exists
+####./plotting/files/StatTrakAK47VulcanMW.csv
+host: steamcommunity.com
+name: ./plotting/files/StatTrakAK47VulcanMW.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=StatTrak%E2%84%A2%20AK-47%20|%20Vulcan%20(Minimal%20Wear)
+-------------
+./plotting/files/OperationBrokenFangCase.csv
+exists
+####./plotting/files/OperationBrokenFangCase.csv
+host: steamcommunity.com
+name: ./plotting/files/OperationBrokenFangCase.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Operation%20Broken%20Fang%20Case
+-------------
+./plotting/files/GloveCase.csv
+exists
+####./plotting/files/GloveCase.csv
+host: steamcommunity.com
+name: ./plotting/files/GloveCase.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Glove%20Case
+-------------
+./plotting/files/AWPAsiimovFT.csv
+exists
+####./plotting/files/AWPAsiimovFT.csv
+host: steamcommunity.com
+name: ./plotting/files/AWPAsiimovFT.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=AWP%20|%20Asiimov%20(Field-Tested)
+-------------
+./plotting/files/OperationBreakoutWeaponCase.csv
+exists
+####./plotting/files/OperationBreakoutWeaponCase.csv
+host: steamcommunity.com
+name: ./plotting/files/OperationBreakoutWeaponCase.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Operation%20Breakout%20Weapon%20Case
+-------------
+./plotting/files/FractureCase.csv
+exists
+####./plotting/files/FractureCase.csv
+host: steamcommunity.com
+name: ./plotting/files/FractureCase.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Fracture%20Case
+-------------
+./plotting/files/Gamma2Case.csv
+exists
+####./plotting/files/Gamma2Case.csv
+host: steamcommunity.com
+name: ./plotting/files/Gamma2Case.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Gamma%202%20Case
+-------------
+./plotting/files/Spectrum2Case.csv
+exists
+####./plotting/files/Spectrum2Case.csv
+host: steamcommunity.com
+name: ./plotting/files/Spectrum2Case.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Spectrum%202%20Case
+-------------
+./plotting/files/DangerZoneCase.csv
+exists
+####./plotting/files/DangerZoneCase.csv
+host: steamcommunity.com
+name: ./plotting/files/DangerZoneCase.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Danger%20Zone%20Case
+-------------
+./plotting/files/SpectrumCase.csv
+exists
+####./plotting/files/SpectrumCase.csv
+host: steamcommunity.com
+name: ./plotting/files/SpectrumCase.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=Spectrum%20Case
+-------------
+./plotting/files/ButterflyKnifeSlaughterMW.csv
+exists
+####./plotting/files/ButterflyKnifeSlaughterMW.csv
+host: steamcommunity.com
+name: ./plotting/files/ButterflyKnifeSlaughterMW.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20Butterfly%20Knife%20|%20Slaughter%20(Minimal%20Wear)
+-------------
+./plotting/files/M9BayonetDopplerFN.csv
+exists
+####./plotting/files/M9BayonetDopplerFN.csv
+host: steamcommunity.com
+name: ./plotting/files/M9BayonetDopplerFN.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20M9%20Bayonet%20|%20Doppler%20(Factory%20New)
+-------------
+./plotting/files/StatTrakM9BayonetGammaDopplerFN.csv
+exists
+####./plotting/files/StatTrakM9BayonetGammaDopplerFN.csv
+host: steamcommunity.com
+name: ./plotting/files/StatTrakM9BayonetGammaDopplerFN.csv
+https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name=%E2%98%85%20StatTrak%E2%84%A2%20M9%20Bayonet%20|%20Gamma%20Doppler%20(Factory%20New)
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 1,54€
+median: 1,55€
+volume: 13,096
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 0,07€
+median: 0,05€
+volume: 111,724
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 0,13€
+median: 0,12€
+volume: 63,126
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 0,40€
+median: 0,41€
+volume: 19,953
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 0,43€
+median: 0,45€
+volume: 87,062
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 464,99€
+median: 568,63€
+volume: 13
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 450,--€
+median: 473,67€
+volume: 1
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 82,--€
+median: 80,51€
+volume: 72
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 915,54€
+median: undefined
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 0,64€
+median: 0,65€
+volume: 193,024
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 454,20€
+median: 450,85€
+volume: 1
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 673,--€
+median: undefined
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 0,28€
+median: 0,29€
+volume: 55,737
+-------------
+status code: 200
+saved at: plotting/files/
+2021-03-23 14:58
+time: 1616507880000
+lowest: 1,04€
+median: 1,04€
+volume: 22,774

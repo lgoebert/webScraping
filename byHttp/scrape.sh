@@ -1,2 +1,2 @@
 #!/bin/bash
-node /home/pi/dev/webScraping/byHttp/index.js > /home/pi/logs/scraper.txt
+node ./index.js > ./scraper.txt
